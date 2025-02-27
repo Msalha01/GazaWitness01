@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخسائر والأضرار حسب القطاعات</title>
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* إعداد ألوان الثيم */
+        :root {
+            --background-color: #000;
+            --text-color: #fff;
+            --highlight-color: #ffae00;
+            --button-bg: #222;
+            --button-color: #ffae00;
+        }
+
+        [data-theme="light"] {
+            --background-color: #fff;
+            --text-color: #000;
+            --highlight-color: #ffae00;
+            --button-bg: #ddd;
+            --button-color: #ffae00;
+        }
+
+        /* تنسيق الصفحة */
+        body {
+            font-family: 'Noto Sans Arabic';
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        /* زر تغيير الثيم */
+        .theme-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px; /* نقل الزر إلى الجهة اليمنى */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--button-bg);
+            color: var(--button-color);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: background 0.5s, color 0.5s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        h3 {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: -50px;
+            color: var(--text-color);
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        .image-container img {
+            width: 600px;
+            height: auto;
+        }
+        
+        header {
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 60px;
+            top: -27px;
+            width: auto;
+            height: 200px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-top: -80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 90px;
+            height: 120px;
+            background-color: black;
+            border: 2px solid var(--highlight-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .box img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .box-label {
+            margin-top: 10px;
+            font-size: 16px;
+            color: var(--text-color);
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- زر تغيير الثيم -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <div class="image-container">
+        <img id="themeImage" src="EyeTop.png" alt="رسم عين">
+    </div>
+
+    <header>
+        <img src="logo.png" alt="شعار الموقع" class="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="Sections.html">القطاعات</a></li>
+                <li><a href="الإنفوجرافيك الشامل.html">إنفوجرافيك</a></li>
+                <li><a href="شهادات.html">شهادات</a></li>
+                <li><a href="مزيد من المعلومات.html">مزيد من المعلومات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h3>الخسائر والأضرار حسب القطاعات</h3>      
+        <div class="grid-container" id="grid-container">
+            <!-- سيتم إضافة العناصر ديناميكيًا هنا -->
+        </div>
+    </main>
+
+    <script>
+        const labels = [
+            "الخسائر البشرية", "الجرحى والمرضى", "الأطفال والنساء",
+            "الإعتقالات", "النزوح والإيواء", "قطاع التعليم",
+            "قطاع الصحة", "قطاع الشؤون الدينية", "قطاع الإسكان",
+            "قطاع الرياضة", "قطاع السياحة والآثار", "قطاع البنية التحتية",
+            "الخسائر الإقتصادية", "الانتهاكات والدمار العام"
+        ];
+
+        const imageLinks = [
+            "images/الخسائر البشرية.png", "images/الجرحى والمرضى.png", "images/الأطفال والنساء .png", 
+            "images/الإعتقالات.png", "images/النزوح والإيواء.png", "images/قطاع التعليم.png", 
+            "images/قطاع الصحة.png", "images/قطاع الشؤون الدينية.png", "images/قطاع الإسكان.png", 
+            "images/قطاع الرياضة.png", "images/قطاع السياحة.png", "images/قطاع البنية التحتية.png", 
+            "images/الخسائر الإقتصادية.png", "images/الإنتهاكات والدمار العام.png"
+        ];
+
+        const gridContainer = document.getElementById('grid-container');
+
+        for (let i = 0; i < labels.length; i++) {
+            const boxContainer = document.createElement('div');
+            boxContainer.style.textAlign = 'center';
+
+            const link = document.createElement('a');
+            link.href = labels[i] + ".html";  // تحديد الرابط باستخدام الاسم
+
+            const box = document.createElement('div');
+            box.className = 'box';
+
+            const img = document.createElement('img');
+            img.src = imageLinks[i]; // استخدام الروابط المضافة للصور
+            img.alt = labels[i];
+            box.appendChild(img);
+
+            const label = document.createElement('div');
+            label.className = 'box-label';
+            label.innerText = labels[i];
+
+            boxContainer.appendChild(link);
+            link.appendChild(box);
+            boxContainer.appendChild(label);
+
+            gridContainer.appendChild(boxContainer);
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector(".theme-toggle");
+            const themeImage = document.getElementById("themeImage");
+
+            if (body.getAttribute("data-theme") === "light") {
+                body.setAttribute("data-theme", "dark");
+                button.innerHTML = "🌙";
+                themeImage.src = "EyeTop.png";  // تعيين صورة العين الخاصة بالثيم الداكن
+            } else {
+                body.setAttribute("data-theme", "light");
+                button.innerHTML = "☀️";
+                themeImage.src = "black.png";  // تعيين صورة العين الخاصة بالثيم الفاتح
+            }
+        }
+    </script>
+</body>
+</html>

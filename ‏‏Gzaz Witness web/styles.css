@@ -1,0 +1,83 @@
+/* ضبط الخطوط والخلفية */
+body {
+    font-family: 'Noto Sans Arabic';
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* تنسيق شريط التنقل */
+header nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* ضبط الحاوية الرئيسية */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.content {
+    text-align: right;
+    max-width: 600px;
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+
+/* تنسيق النصوص */
+.subtitle {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ضبط الصورة */
+.image-container img {
+    max-width: 400px;
+}
+
+/* تنسيق الفوتر */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+

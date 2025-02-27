@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخسائر البشرية</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        h3 {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: -50px;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic';
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        .image-container img {
+            width: 600px;
+            height: auto;
+        }
+
+        header {
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 60px;
+            top: -27px;
+            width: auto;
+            height: 200px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-top: -80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-family: 'Noto Sans Arabic';
+            font-size: 18px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            margin: 55px;
+            margin-top: 10PX;
+        }
+        .icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* يمكنك تعديل المسافة هنا */
+    margin-top: 20px;
+    margin-left: 20PX;
+}
+
+        .icons-container i:hover {
+            color: #f39c12; /* تغيير اللون عند التمرير */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="EyeTop.png" alt="رسم عين">
+    </div>
+
+    <header>
+        <img src="logo.png" alt="شعار الموقع" class="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="Sections.html">القطاعات</a></li>
+                <li><a href="#">إنفوجرافيك</a></li>
+                <li><a href="#">شهادات</a></li>
+                <li><a href="#">مزيد من المعلومات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h3>الخسائر البشرية</h3>
+
+        <!-- أيقونات أسفل العنوان -->
+        <div class="icons-container">
+            <a href="صور الخسائر البشرية.html">
+                <img src="image-gallery.PNG" alt="Image Icon" />
+              </a>
+
+            <a href="فيديو الخسائر البشرية.html">
+                <img src="video.png" alt="Video Icon" />
+            </a>
+
+            <a href="إنفوجرافيك الخسائر البشرية.html">
+            <img src="infographics.png" alt="Chart Icon" />
+        </a>
+        </div>
+
+        <!-- النص أسفل العنوان -->
+        <div class="buttons-container">
+            <button class="button">صور</button>
+            <button class="button">فيديو</button>
+            <button class="button">إنفوجرافيك</button>
+        </div>
+
+        <div class="grid-container" id="grid-container">
+            <!-- سيتم إضافة العناصر ديناميكيًا هنا -->
+        </div>
+    </main>
+
+</body>
+</html>

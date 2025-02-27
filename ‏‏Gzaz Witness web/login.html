@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادة غزة</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ضبط الخلفية والخطوط */
+        body {
+            font-family: 'Noto Sans Arabic';
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        /* زر تسجيل الدخول */
+        .login-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .login-icon:hover {
+            color: #ffae00;
+        }
+
+        /* تنسيق العنوان */
+        h1 {
+            font-size: 140px;
+            font-weight: bold;
+        }
+
+        /* تنسيق شريط التنقل */
+        header nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* تنسيق المحتوى */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .content {
+            text-align: right;
+            max-width: 600px;
+        }
+
+        .subtitle {
+            font-size: 28.5px;
+            color: #ffffff;
+        }
+
+        .image-container img {
+            max-width: 400px;
+        }
+
+        /* تنسيق الفوتر */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- أيقونة تسجيل الدخول -->
+    <a href="login.html" class="login-icon">
+        <i class="fas fa-user"></i>
+    </a>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="Sections.html">القطاعات</a></li>
+                <li><a href="الإنفوجرافيك الشامل.html">إنفوجرافيك</a></li>
+                <li><a href="شهادات.html">شهادات</a></li>
+                <li><a href="مزيد من المعلومات.html">مزيد من المعلومات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1>شهادة غزة</h1>
+                <p class="subtitle">منصة توثق آثار الحرب بالصور والفيديو والإنفوجرافيك</p>
+            </div>
+            <div class="image-container">
+                <img src="eye-illustration.png" alt="رسم عين">
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>جميع البيانات الموجودة داخل المنصة موثقة من المكتب الإعلامي الحكومي</p>
+    </footer>
+
+</body>
+</html>
