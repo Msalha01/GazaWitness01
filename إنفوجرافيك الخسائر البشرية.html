@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنفوجرافيك الخسائر البشرية</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        h3 {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: -50px;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic';
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        .image-container img {
+            width: 600px;
+            height: auto;
+        }
+
+        header {
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 60px;
+            top: -27px;
+            width: auto;
+            height: 200px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-top: -80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+        }
+
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .icons-container i:hover {
+            color: #f39c12;
+        }
+
+        /* الأزرار الدائرية */
+        .action-btns-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 24px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background-color: #f39c12;
+        }
+
+        /* تغيير الأيقونات داخل الأزرار */
+        .action-btn i {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="EyeTop.png" alt="رسم عين">
+    </div>
+
+    <header>
+        <img src="logo.png" alt="شعار الموقع" class="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="Sections.html">القطاعات</a></li>
+                <li><a href="الإنفوجرافيك الشامل.html">إنفوجرافيك</a></li>
+                <li><a href="شهادات.html">شهادات</a></li>
+                <li><a href="مزيد من المعلومات.html">مزيد من المعلومات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h3>إنفوجرافيك الخسائر البشرية</h3>
+
+        <!-- أيقونات أسفل العنوان -->
+        <div class="icons-container">
+            <a href="LIB\01- Human\info\01.png" target="_blank">
+                <img src="LIB\01- Human\info\02.png" alt="Image Icon" sizes="10%"/>
+            </a>
+        </div>
+
+        <!-- الأزرار الدائرية (تحميل ومشاركة) -->
+        <div class="action-btns-container">
+            <!-- زر تحميل -->
+            <a href="LIB\01- Human\info\01.png" download>
+                <button class="action-btn">
+                    <i class="fas fa-download"></i>
+                </button>
+            </a>
+
+            <!-- زر مشاركة -->
+            <button class="action-btn" onclick="copyLink()">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+
+        <div class="grid-container" id="grid-container">
+            <!-- سيتم إضافة العناصر ديناميكيًا هنا -->
+        </div>
+    </main>
+
+    <script>
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(function() {
+                alert("تم نسخ الرابط!");
+            }, function() {
+                alert("فشل في نسخ الرابط.");
+            });
+        }
+    </script>
+</body>
+</html>
